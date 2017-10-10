@@ -11,7 +11,7 @@ ENV SS_TIMEOUT     300
 ENV SS_DNS_ADDR    8.8.8.8
 ENV SS_DNS_ADDR_2  8.8.4.4
 
-ENV KCPTUN_VERSION     20170525
+ENV KCPTUN_VERSION     20170930
 ENV KCPTUN_URL         https://github.com/xtaci/kcptun/releases/download/v$KCPTUN_VERSION/kcptun-linux-amd64-$KCPTUN_VERSION.tar.gz
 ENV KCPTUN_PORT        8389
 ENV KCPTUN_CRYPT       none
