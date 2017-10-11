@@ -29,9 +29,10 @@ ENV KCPTUN_DSCP         46
 ENV KCPTUN_DATASHARD    10
 ENV KCPTUN_PARITYSHARD  3
 
-ENV OBFS_LISTEN  127.0.0.1
-ENV OBFS_PORT    8390
-ENV OBFS_TYPE    http
+ENV OBFS_LISTEN    127.0.0.1
+ENV OBFS_PORT      8390
+ENV OBFS_TYPE      http
+ENV OBFS_FAILOVER  127.0.0.1:80
 
 RUN set -ex && \
     apk add --no-cache --virtual .build-deps \
@@ -108,6 +109,7 @@ CMD kcptunserver \
         -s $OBFS_LISTEN \
         -p $OBFS_PORT \
         --obfs $OBFS_TYPE \
+        --failover $OBFS_FAILOVER \
         --fast-open \
         -r $SS_LISTEN:$SS_PORT \
         -v
